@@ -11,15 +11,22 @@ export default function ChecklistPage() {
 
   return (
     <>
-      <header className="bg-white shadow p-4">
-        <h1 className="text-2xl font-bold">
-          Monthly Bills Checklist
-        </h1>
+    <section className="min-h-screen bg-gradient-to-br from-slate-100 to-slate-200">
+      <header className="bg-white shadow-sm border-b">
+      <div className="max-w-3xl mx-auto px-4 py-4">
+      <h1 className="text-2xl font-semibold tracking-tight">
+            Bills Manager
+          </h1>
+          <p className="text-sm text-gray-500">
+            Track your monthly payments
+          </p>
+        </div>
+
       </header>
 
-      <main className="min-h-screen bg-gray-100 p-6">
+      <main className="max-w-3xl mx-auto px-4 py-6">
 
-        <section aria-labelledby="month-selector-title">
+        <section aria-labelledby="month-selector-title" className="bg-white rounded-xl shadow p-5 mb-6">
           <h2 id="month-selector-title" className="sr-only">
             Select month and year
           </h2>
@@ -39,6 +46,8 @@ export default function ChecklistPage() {
         </section>
 
       </main>
+      </section>
+
     </>
   );
 }
