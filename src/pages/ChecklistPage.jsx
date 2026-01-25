@@ -1,6 +1,7 @@
 import { useState } from "react";
 import MonthSelector from "../components/MonthSelector";
 import BillsChecklist from "../components/BillsChecklist";
+import Wave from "../layout/Wave";
 
 export default function ChecklistPage() {
 
@@ -11,17 +12,16 @@ export default function ChecklistPage() {
 
   return (
     <>
-    <section className="min-h-screen bg-gradient-to-br from-slate-100 to-slate-200">
-      <header className="bg-white shadow-sm border-b">
-      <div className="max-w-3xl mx-auto px-4 py-4">
+    <section className="min-h-screen mt-6 bg-gradient-to-br from-slate-100 to-slate-200">
+      <header className="bg-white border-b shadow-md">
+      <div className="max-w-3xl mx-auto py-5 text-center">
       <h1 className="text-2xl font-semibold tracking-tight">
             Bills Manager
           </h1>
-          <p className="text-sm text-gray-500">
+          <p className="text-sm  text-gray-500">
             Track your monthly payments
           </p>
         </div>
-
       </header>
 
       <main className="max-w-3xl mx-auto px-4 py-6">

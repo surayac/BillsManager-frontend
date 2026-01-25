@@ -29,26 +29,49 @@ export default function BillItem({ bill, month, year, onUpdate }) {
 
   return (
     <article
-      className="flex items-center gap-4 bg-white p-3 rounded shadow"
-      aria-label={`Bill ${bill.billName}`}
+      className={`p-4 rounded-lg border transition
+        ${bill.paid
+          ? "bg-green-50 border-green-300"
+          : "bg-white hover:bg-slate-50"
+        }`}
     >
 
-      <input
-        id={checkboxId}
-        type="checkbox"
-        checked={bill.paid}
-        onChange={togglePayment}
-        className="w-5 h-5 accent-green-600 focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
-      />
+      <section className="flex items-center justify-between">
 
-      <label
-        htmlFor={checkboxId}
-        className={`text-lg cursor-pointer ${
-          bill.paid ? "line-through text-gray-400" : ""
-        }`}
-      >
-        {bill.billName}
-      </label>
+        <section className="flex items-center gap-3">
+
+          <input
+            id={checkboxId}
+            type="checkbox"
+            checked={bill.paid}
+            onChange={togglePayment}
+            className="w-5 h-5 accent-green-600 cursor-pointer"
+          />
+
+          <label
+            htmlFor={checkboxId}
+            className={`font-medium cursor-pointer text-lg
+              ${bill.paid ? "line-through text-green-700" : ""}
+            `}
+          >
+            {bill.billName}
+          </label>
+
+        </section>
+
+        {bill.paid && (
+          <span className="text-xs font-semibold text-green-700 bg-green-100 px-2 py-1 rounded">
+            PAID
+          </span>
+        )}
+      </section>
+
+      <section className="mt-2 flex justify-between text-sm text-gray-600">
+        <span>
+          Due day: <strong>{bill.dueDay}</strong>
+        </span>
+
+      </section>
 
     </article>
   );
