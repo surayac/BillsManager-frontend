@@ -1,7 +1,6 @@
 import { useState } from "react";
 import MonthSelector from "../components/MonthSelector";
 import BillsChecklist from "../components/BillsChecklist";
-import Wave from "../layout/Wave";
 
 export default function ChecklistPage() {
 
